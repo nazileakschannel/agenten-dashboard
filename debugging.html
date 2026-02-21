@@ -33,7 +33,8 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
             z-index: 1000;
         }
-        .container { max-width: 1000px; margin: 0 auto; padding-top: 80px; }
+        .container { max-width: 1000px; margin: 0 auto; padding-top: 80px; display: none; }
+        .container.visible { display: block; }
         
         .header { 
             text-align: center; 
@@ -82,48 +83,61 @@
             margin-bottom: 10px;
         }
         
-        @supports (-webkit-touch-callout: none) {
-            body {
-                padding-top: max(20px, env(safe-area-inset-top));
-                padding-bottom: max(20px, env(safe-area-inset-bottom));
-            }
-            .home-link {
-                top: max(20px, env(safe-area-inset-top));
-            }
-        }
-            /* Passwort-Schutz */
+        /* Passwort-Schutz */
         #password-overlay {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             z-index: 9999;
         }
         #password-overlay.hidden { display: none; }
         .password-box {
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px; padding: 40px; text-align: center;
-            max-width: 350px; width: 90%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 350px;
+            width: 90%;
         }
         .password-icon { font-size: 60px; margin-bottom: 20px; }
         .password-title { font-size: 24px; margin-bottom: 20px; color: #00d4ff; }
         .password-input {
-            width: 100%; padding: 15px; border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px; background: rgba(0,0,0,0.3); color: #fff;
-            font-size: 16px; text-align: center; margin-bottom: 15px;
+            width: 100%; padding: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            background: rgba(0,0,0,0.3);
+            color: #fff; font-size: 16px;
+            text-align: center; margin-bottom: 15px;
         }
         .password-button {
-            width: 100%; padding: 15px; background: linear-gradient(90deg, #00d4ff, #7b2cbf);
-            border: none; border-radius: 10px; color: #fff; font-size: 16px; font-weight: bold;
+            width: 100%; padding: 15px;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            border: none; border-radius: 10px;
+            color: #fff; font-size: 16px; font-weight: bold;
             cursor: pointer;
         }
         .password-error { color: #ff6464; margin-top: 10px; font-size: 14px; display: none; }
-        .container { display: none; }
-        .container.visible { display: block; }
     </style>
 </head>
 <body>
+    <!-- Passwort-Schutz -->
+    <div id="password-overlay">
+        <div class="password-box">
+            <div class="password-icon">🔐</div>
+            <div class="password-title">Agenten Dashboard</div>
+            <input type="password" id="password-input" class="password-input" placeholder="Passwort eingeben">
+            <button onclick="checkPassword()" class="password-button">Einloggen</button>
+            <div id="password-error" class="password-error">Falsches Passwort</div>
+        </div>
+    </div>
+
     <a href="https://nazileakschannel.github.io/agenten-dashboard/" class="home-link" title="Zurück">🏠</a>
-    <div class="container">
+    <div class="container" id="main-content">
         <div class="header">
             <div class="header-icon">🔧</div>
             <h1>Debugging</h1>
@@ -167,26 +181,26 @@
             <a href="https://drive.google.com/drive/folders/18hNKkMiTtmSTR4s_cW9hPmKUBHsWL-gK" class="action-button">Drive Ordner öffnen</a>
         </div>
     </div>
+
+    <script>
+        const PASSWORD = "Agenten2024";
+        function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            if (input === PASSWORD) {
+                document.getElementById('password-overlay').classList.add('hidden');
+                document.getElementById('main-content').classList.add('visible');
+                localStorage.setItem('dashboard_auth', 'true');
+            } else {
+                document.getElementById('password-error').style.display = 'block';
+            }
+        }
+        document.getElementById('password-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') checkPassword();
+        });
+        if (localStorage.getItem('dashboard_auth') === 'true') {
+            document.getElementById('password-overlay').classList.add('hidden');
+            document.getElementById('main-content').classList.add('visible');
+        }
+    </script>
 </body>
 </html>
-
-<script>
-const PASSWORD = "Agenten2024";
-function checkPassword() {
-    const input = document.getElementById('password-input').value;
-    if (input === PASSWORD) {
-        document.getElementById('password-overlay').classList.add('hidden');
-        document.getElementById('main-content').classList.add('visible');
-        localStorage.setItem('dashboard_auth', 'true');
-    } else {
-        document.getElementById('password-error').style.display = 'block';
-    }
-}
-document.getElementById('password-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') checkPassword();
-});
-if (localStorage.getItem('dashboard_auth') === 'true') {
-    document.getElementById('password-overlay').classList.add('hidden');
-    document.getElementById('main-content').classList.add('visible');
-}
-</script>
