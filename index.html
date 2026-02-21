@@ -2,7 +2,9 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Agenten Dashboard - Main</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,10 +51,42 @@
             color: inherit;
             display: block;
         }
-        .agent-card:hover { 
+        .agent-card:hover, .agent-card:active { 
             transform: translateY(-5px); 
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             border-color: rgba(0,212,255,0.3);
+        }
+        
+        /* iPhone Optimizations */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                padding: 20px;
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+            
+            .agent-card {
+                min-height: 44px;
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            header {
+                padding: 30px 15px;
+            }
+        }
+        
+        @media (max-width: 390px) {
+            h1 { font-size: 28px; }
+            .agent-icon { font-size: 36px; width: 55px; height: 55px; }
+            .agent-title h2 { font-size: 18px; }
+            .dashboard-grid { grid-template-columns: 1fr; }
         }
         
         .agent-header { 

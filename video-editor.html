@@ -2,7 +2,9 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Video-Editor - Agent Details</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -96,6 +98,28 @@
             margin-bottom: 10px;
             border-radius: 8px;
             border-left: 4px solid #ffc107;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* iPhone Optimizations */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                padding-top: max(20px, env(safe-area-inset-top));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
+            }
+            .home-link {
+                top: max(20px, env(safe-area-inset-top));
+                left: max(20px, env(safe-area-inset-left));
+            }
+        }
+        
+        @media (max-width: 390px) {
+            h1 { font-size: 26px; }
+            .agent-icon-large { font-size: 60px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .container { padding-top: 80px; }
         }
     </style>
 </head>
