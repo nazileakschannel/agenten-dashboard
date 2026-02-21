@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Team Status</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background-attachment: fixed;
+            color: #fff; 
+            min-height: 100vh; 
+            padding: 20px;
+        }
+        .home-link { 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            font-size: 22px; 
+            text-decoration: none; 
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf); 
+            color: white; 
+            width: 45px; 
+            height: 45px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 50%; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding-top: 80px; }
+        
+        .header { 
+            text-align: center; 
+            padding: 40px; 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 20px; 
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header-icon { font-size: 60px; margin-bottom: 15px; }
+        h1 { font-size: 32px; color: #00d4ff; }
+        
+        .agent-list { margin-bottom: 30px; }
+        
+        .agent-row {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+        }
+        .agent-icon { font-size: 40px; margin-right: 20px; }
+        .agent-info { flex: 1; }
+        .agent-name { font-size: 20px; font-weight: bold; margin-bottom: 5px; }
+        .agent-task { color: #888; font-size: 14px; }
+        .agent-status {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status-active { background: rgba(0,255,100,0.2); color: #00ff64; border: 1px solid #00ff64; }
+        .status-idle { background: rgba(255,193,7,0.2); color: #ffc107; border: 1px solid #ffc107; }
+        
+        @supports (-webkit-touch-callout: none) {
+            body {
+                padding-top: max(20px, env(safe-area-inset-top));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
+            }
+            .home-link {
+                top: max(20px, env(safe-area-inset-top));
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://nazileakschannel.github.io/agenten-dashboard/" class="home-link" title="Zurück">🏠</a>
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">👥</div>
+            <h1>Team Status</h1>
+        </div>
+
+        <div class="agent-list">
+            <div class="agent-row">
+                <div class="agent-icon">📝</div>
+                <div class="agent-info">
+                    <div class="agent-name">Content-Communication</div>
+                    <div class="agent-task">Sulzer Profiler v2 ✓</div>
+                </div>
+                <div class="agent-status status-active">AKTIV</div>
+            </div>
+            
+            <div class="agent-row">
+                <div class="agent-icon">🎭</div>
+                <div class="agent-info">
+                    <div class="agent-name">Bobik</div>
+                    <div class="agent-task">Sleepy Hollow Analyse ✓</div>
+                </div>
+                <div class="agent-status status-active">BEREIT</div>
+            </div>
+            
+            <div class="agent-row">
+                <div class="agent-icon">🎨</div>
+                <div class="agent-info">
+                    <div class="agent-name">Set-Designer</div>
+                    <div class="agent-task">Wartet auf Auftrag</div>
+                </div>
+                <div class="agent-status status-idle">VERFÜGBAR</div>
+            </div>
+            
+            <div class="agent-row">
+                <div class="agent-icon">🎬</div>
+                <div class="agent-info">
+                    <div class="agent-name">Video-Editor</div>
+                    <div class="agent-task">Wartet auf Auftrag</div>
+                </div>
+                <div class="agent-status status-idle">VERFÜGBAR</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

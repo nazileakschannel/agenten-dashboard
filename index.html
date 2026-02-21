@@ -23,7 +23,7 @@
             padding: 40px 20px; 
             background: rgba(255,255,255,0.05); 
             border-radius: 20px; 
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             border: 1px solid rgba(255,255,255,0.1);
         }
         h1 { 
@@ -33,6 +33,33 @@
             -webkit-text-fill-color: transparent; 
         }
         .subtitle { color: #888; font-size: 18px; margin-top: 10px; }
+        
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .quick-link {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+            transition: all 0.3s;
+        }
+        .quick-link:hover, .quick-link:active {
+            background: rgba(0,212,255,0.1);
+            border-color: rgba(0,212,255,0.3);
+            transform: translateY(-3px);
+        }
+        .quick-link-icon { font-size: 28px; margin-bottom: 5px; }
+        .quick-link-text { font-size: 11px; color: #888; }
         
         .dashboard-grid { 
             display: grid; 
@@ -156,6 +183,21 @@
             <h1>🤖 AGENTEN DASHBOARD</h1>
             <p class="subtitle">OpenClaw Multi-Agent System</p>
         </header>
+
+        <div class="quick-links">
+            <a href="https://nazileakschannel.github.io/agenten-dashboard/status-report.html" class="quick-link">
+                <span class="quick-link-icon">📊</span>
+                <span class="quick-link-text">Status</span>
+            </a>
+            <a href="https://nazileakschannel.github.io/agenten-dashboard/team-status.html" class="quick-link">
+                <span class="quick-link-icon">👥</span>
+                <span class="quick-link-text">Team</span>
+            </a>
+            <a href="https://nazileakschannel.github.io/agenten-dashboard/debugging.html" class="quick-link">
+                <span class="quick-link-icon">🔧</span>
+                <span class="quick-link-text">Debug</span>
+            </a>
+        </div>
 
         <div class="dashboard-grid">
             <!-- Content-Communication-Agent -->

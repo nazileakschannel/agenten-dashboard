@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Status Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background-attachment: fixed;
+            color: #fff; 
+            min-height: 100vh; 
+            padding: 20px;
+        }
+        .home-link { 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            font-size: 22px; 
+            text-decoration: none; 
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf); 
+            color: white; 
+            width: 45px; 
+            height: 45px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 50%; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding-top: 80px; }
+        
+        .header { 
+            text-align: center; 
+            padding: 40px; 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 20px; 
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header-icon { font-size: 60px; margin-bottom: 15px; }
+        h1 { font-size: 32px; color: #00d4ff; }
+        
+        .section { 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 20px; 
+            padding: 25px; 
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .section-title { font-size: 20px; color: #00d4ff; margin-bottom: 15px; }
+        
+        .report-item {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid #00d4ff;
+        }
+        .report-date { color: #888; font-size: 12px; margin-bottom: 5px; }
+        .report-title { font-weight: bold; margin-bottom: 5px; }
+        .report-link {
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        @supports (-webkit-touch-callout: none) {
+            body {
+                padding-top: max(20px, env(safe-area-inset-top));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
+            }
+            .home-link {
+                top: max(20px, env(safe-area-inset-top));
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://nazileakschannel.github.io/agenten-dashboard/" class="home-link" title="Zurück">🏠</a>
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">📊</div>
+            <h1>Status Reports</h1>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📁 Automatische 4h Reports</div>
+            <div class="report-item">
+                <div class="report-date">21.02.2026 - 19:06 CET</div>
+                <div class="report-title">Letzter Status Report</div>
+                <a href="https://drive.google.com/drive/folders/18hNKkMiTtmSTR4s_cW9hPmKUBHsWL-gK" class="report-link">📁 Ordner öffnen →</a>
+            </div>
+            <div class="report-item">
+                <div class="report-date">Alle 4 Stunden automatisch</div>
+                <div class="report-title">Nächster Report: 23:06 CET</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📈 Aktuelle Statistik</div>
+            <div class="report-item">
+                <div class="report-title">✅ 2 Jobs fertig (heute)</div>
+                <div class="report-date">Sleepy Hollow Analyse, Sulzer Profiler</div>
+            </div>
+            <div class="report-item">
+                <div class="report-title">⏸️ 2 Agenten verfügbar</div>
+                <div class="report-date">Set-Designer, Video-Editor</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
