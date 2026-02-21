@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set-Designer - Agent Details</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background-attachment: fixed;
+            color: #fff; 
+            min-height: 100vh; 
+            padding: 20px;
+        }
+        .home-link { 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            font-size: 22px; 
+            text-decoration: none; 
+            background: linear-gradient(90deg, #ff9f1c, #ff006e); 
+            color: white; 
+            width: 45px; 
+            height: 45px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 50%; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding-top: 60px; }
+        
+        .header { 
+            text-align: center; 
+            padding: 40px; 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 20px; 
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .agent-icon-large { font-size: 80px; margin-bottom: 20px; }
+        h1 { 
+            font-size: 36px; 
+            background: linear-gradient(90deg, #ff9f1c, #ff006e); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .role { color: #888; font-size: 18px; margin-top: 10px; }
+        .status-badge { 
+            display: inline-block; 
+            padding: 10px 25px; 
+            border-radius: 25px; 
+            font-weight: bold; 
+            margin-top: 20px;
+            background: rgba(255,193,7,0.2); 
+            color: #ffc107; 
+            border: 2px solid #ffc107;
+        }
+        
+        .section { 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 20px; 
+            padding: 30px; 
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .section-title { 
+            font-size: 24px; 
+            color: #00d4ff; 
+            margin-bottom: 20px;
+        }
+        
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 15px; 
+        }
+        .skill-item { 
+            background: rgba(255,255,255,0.1); 
+            padding: 15px; 
+            border-radius: 12px; 
+            border-left: 4px solid #ff9f1c;
+        }
+        .skill-name { font-weight: bold; }
+        .skill-level { font-size: 12px; color: #888; }
+        
+        .availability-list {
+            list-style: none;
+        }
+        .availability-list li {
+            padding: 12px 20px;
+            background: rgba(255,193,7,0.1);
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://nazileakschannel.github.io/agenten-dashboard/" class="home-link" title="Zurück">🏠</a>
+    <div class="container">
+        <div class="header">
+            <div class="agent-icon-large">🎨</div>
+            <h1>Set-Designer</h1>
+            <div class="role">Set-Design, Produktions-Planung & Visualisierung</div>
+            <div class="status-badge">⏸️ VERFÜGBAR</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🎯 Skills & Expertise</div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-name">🎨 Set-Design Konzepte</div>
+                    <div class="skill-level">⭐⭐⭐⭐⭐ Experte</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">🎭 Bühnenbild</div>
+                    <div class="skill-level">⭐⭐⭐⭐⭐ Experte</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">🛒 Shopping Lists</div>
+                    <div class="skill-level">⭐⭐⭐⭐⭐ Experte</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">🏰 Historische Settings</div>
+                    <div class="skill-level">⭐⭐⭐⭐⭐ Experte</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🚀 Verfügbar für</div>
+            <ul class="availability-list">
+                <li>🎬 Film/TV Sets - Studio-Planung & Practical Sets</li>
+                <li>🏰 Historische Settings - 19. Jahrhundert, Viktorianisch, Gothic</li>
+                <li>🎭 Theater & Events - Bühnenbild & Inszenierung</li>
+                <li>🛍️ Prop Design & Beschaffung</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

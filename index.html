@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenten Dashboard - Main</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            background-attachment: fixed;
+            color: #fff; 
+            min-height: 100vh; 
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        header { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 20px; 
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        h1 { 
+            font-size: 42px; 
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf, #ff006e); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .subtitle { color: #888; font-size: 18px; margin-top: 10px; }
+        
+        .dashboard-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 30px;
+        }
+        
+        .agent-card { 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 20px; 
+            padding: 25px; 
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .agent-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: rgba(0,212,255,0.3);
+        }
+        
+        .agent-header { 
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 20px; 
+        }
+        .agent-icon { 
+            font-size: 48px; 
+            margin-right: 15px; 
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(123,44,191,0.2));
+            border-radius: 15px;
+            border: 2px solid rgba(0,212,255,0.3);
+        }
+        .agent-title h2 { font-size: 20px; color: #fff; margin-bottom: 5px; }
+        .agent-role { color: #888; font-size: 12px; }
+        
+        .status-badge { 
+            display: inline-block; 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            font-size: 11px; 
+            font-weight: bold; 
+            margin-bottom: 15px;
+        }
+        .status-active { background: rgba(0,255,100,0.2); color: #00ff64; border: 1px solid rgba(0,255,100,0.3); }
+        .status-idle { background: rgba(255,193,7,0.2); color: #ffc107; border: 1px solid rgba(255,193,7,0.3); }
+        
+        .skills-short { 
+            background: rgba(0,0,0,0.2); 
+            padding: 15px; 
+            border-radius: 12px; 
+            margin-bottom: 15px;
+        }
+        .skills-short h4 { 
+            color: #00d4ff; 
+            font-size: 12px; 
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .skills-short p { color: #aaa; font-size: 13px; line-height: 1.5; }
+        
+        .work-item { 
+            background: rgba(0,255,100,0.1); 
+            padding: 10px 15px; 
+            border-radius: 8px; 
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #00ff64;
+            border-left: 3px solid #00ff64;
+        }
+        .work-item.idle { 
+            background: rgba(100,100,255,0.1); 
+            color: #6464ff;
+            border-left-color: #6464ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AGENTEN DASHBOARD</h1>
+            <p class="subtitle">OpenClaw Multi-Agent System</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Content-Communication-Agent -->
+            <a href="https://nazileakschannel.github.io/agenten-dashboard/content-comm.html" class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">📝</div>
+                    <div class="agent-title">
+                        <h2>Content-Communication</h2>
+                        <div class="agent-role">Text & Content Creation</div>
+                    </div>
+                </div>
+                <span class="status-badge status-active">🟢 AKTIV</span>
+                <div class="skills-short">
+                    <h4>🎯 Kernskills</h4>
+                    <p>Schreiben • Übersetzung • Profilerstellung • HTML/PDF • Korrespondenz</p>
+                </div>
+                <div class="work-item">Lukášek Antwort v2</div>
+                <div class="work-item">Sulzer Profiler mit IMDb</div>
+            </a>
+
+            <!-- Bobik -->
+            <a href="https://nazileakschannel.github.io/agenten-dashboard/bobik.html" class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">🎭</div>
+                    <div class="agent-title">
+                        <h2>Bobik</h2>
+                        <div class="agent-role">Analyse & Kreativ-Entwicklung</div>
+                    </div>
+                </div>
+                <span class="status-badge status-active">🟢 BEREIT</span>
+                <div class="skills-short">
+                    <h4>🎯 Kernskills</h4>
+                    <p>Literarische Analyse • Story Deconstruction • Moodboards • Bildrecherche</p>
+                </div>
+                <div class="work-item">Dracula's Guest Analyse</div>
+                <div class="work-item">Casanova Analyse v1 & v2</div>
+                <div class="work-item idle">Sleepy Hollow (in Arbeit)</div>
+            </a>
+
+            <!-- Set-Designer -->
+            <a href="https://nazileakschannel.github.io/agenten-dashboard/set-designer.html" class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">🎨</div>
+                    <div class="agent-title">
+                        <h2>Set-Designer</h2>
+                        <div class="agent-role">Set-Design & Produktions-Planung</div>
+                    </div>
+                </div>
+                <span class="status-badge status-idle">⏸️ VERFÜGBAR</span>
+                <div class="skills-short">
+                    <h4>🎯 Kernskills</h4>
+                    <p>Set-Design • Bühnenbild • Shopping Lists • Historische Settings</p>
+                </div>
+                <div class="work-item idle">Keine aktiven Projekte</div>
+            </a>
+
+            <!-- Video-Editor -->
+            <a href="https://nazileakschannel.github.io/agenten-dashboard/video-editor.html" class="agent-card">
+                <div class="agent-header">
+                    <div class="agent-icon">🎬</div>
+                    <div class="agent-title">
+                        <h2>Video-Editor</h2>
+                        <div class="agent-role">Video-Bearbeitung & Post-Production</div>
+                    </div>
+                </div>
+                <span class="status-badge status-idle">⏸️ VERFÜGBAR</span>
+                <div class="skills-short">
+                    <h4>🎯 Kernskills</h4>
+                    <p>Editing • Color Grading • Motion Graphics • VFX • Encoding</p>
+                </div>
+                <div class="work-item idle">Keine aktiven Projekte</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
