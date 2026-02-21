@@ -11,6 +11,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.nazileaks.agentendashboard"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c3e35a03-1203-4c68-8d38-4f66de059f70"
+      }
     }
   }
 }
