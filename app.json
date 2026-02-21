@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Agenten Dashboard",
+    "slug": "agenten-dashboard",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#1a1a2e"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nazileaks.agentendashboard"
+    }
+  }
+}
